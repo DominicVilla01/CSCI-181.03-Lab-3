@@ -39,7 +39,7 @@ class MovieListViewController: UITableViewController {
 		tableView.deselectRow(at: indexPath, animated: true)
 
 		guard let searchMoviesListViewController = storyboard?.instantiateViewController(withIdentifier: "searchMoviesListID") as? SearchMoviesListViewController else { return }
-		searchMoviesListViewController.queryString = queryStrings[1]
+		searchMoviesListViewController.queryString = queryStrings[indexPath.row]
 		navigationController?.pushViewController(searchMoviesListViewController, animated: true)
 	}
 }
